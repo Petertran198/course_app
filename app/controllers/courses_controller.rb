@@ -4,5 +4,9 @@ class CoursesController < ApplicationController
 
   end
 
+  def new
+
+  end
+
 
 end
