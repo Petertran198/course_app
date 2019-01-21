@@ -30,4 +30,15 @@
             </div>
           </div><!-- end on container-->  
         </nav>
+
+        <% flash.each do |key, message| %>
+          <div class="container sign-up-form">
+            <div class="card-panel red lighten-2" id="fade-out-target">
+              <span class="white-text">
+                <%= message %>
+              </span>
+            </div>
+          </div>    
+        <% end %>
+
     </header>

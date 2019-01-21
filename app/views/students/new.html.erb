@@ -1,4 +1,20 @@
+<% if @student.errors.any? %>
 
+  <div class="container sign-up-form">
+    <div class="card-panel red lighten-2">
+      <span class="white-text">
+      <ul>
+        <strong><%= pluralize(@student.errors.count, "error") %></strong>
+        prohibited your profile from being created
+        <% @student.errors.full_messages.each do |message| %>
+          <li>* <%= message %></li>
+        <% end %>
+      </ul>
+      </span>      
+    </div>
+  </div>
+
+<% end %>
 
 <div class="container">
   <div class="row center sign-up-form">
@@ -21,7 +37,7 @@
                 </div>
               </div>
 
-              <%= f.submit "Submit", class: "btn orange waves-effect waves-light" %>
+              <%= f.submit "Register", class: "btn orange waves-effect waves-light" %>
 
             <% end %>
           </div>         
