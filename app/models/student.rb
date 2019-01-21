@@ -3,11 +3,12 @@ class Student < ApplicationRecord
   #The code above is saying before the email hits the database it gets turn lowercase
 
   validates :name, presence: true, length: {maximum: 30}
-
+  #This method is provided by rails for securing password
+  has_secure_password
   #The code below shows how the email should be structured "Email_regex" & that the email is unique 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i  
   validates :email, presence: true, length: { maximum: 105 },            
                          uniqueness: { case_sensitive: false },            
                           format: { with: VALID_EMAIL_REGEX }
-  has_secure_password                        
+
 end
