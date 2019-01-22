@@ -1,4 +1,7 @@
 class Student < ApplicationRecord
+  has_many :student_courses
+  has_many :courses, through: :student_courses
+
   before_save {self.email = email.downcase }
   #The code above is saying before the email hits the database it gets turn lowercase
 
@@ -10,5 +13,9 @@ class Student < ApplicationRecord
   validates :email, presence: true, length: { maximum: 105 },            
                          uniqueness: { case_sensitive: false },            
                           format: { with: VALID_EMAIL_REGEX }
+
+
+
+
 
 end
