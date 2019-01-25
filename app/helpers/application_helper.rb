@@ -10,4 +10,9 @@ module ApplicationHelper
   end
 
 
+
+  def copyright_generator
+    TranViewTool::Renderer.copyright('LearnCode','All Rights Reserved')
+  end
+
 end
